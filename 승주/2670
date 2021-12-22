@@ -1,0 +1,42 @@
+#include <iostream>
+
+using namespace std;
+double list[10001];
+double Max[10001];
+double Max2 = 0;
+int N;
+
+void DP(int i) {
+	if (i == 0) {
+		Max[0] = list[0];
+	}
+	else{
+		if (Max[i - 1] > 1) {
+			Max[i] = Max[i - 1] * list[i];
+		}
+		else {
+			Max[i] = list[i];
+		}
+	}
+	if (Max[i] > Max2) {
+		Max2 = Max[i];
+	}
+	if (i == N-1) {
+		cout << fixed;
+		cout.precision(3);
+		cout << Max2;
+		return;
+	}
+	DP(i+1);
+}
+
+int main() {
+	
+	cin >> N;
+
+	
+	for (int i = 0; i < N; i++) {
+		cin >> list[i];
+	}
+	DP(0);
+}
