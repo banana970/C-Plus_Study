@@ -8,15 +8,11 @@ int N, M, cnt = 0;
 
 void dfs(int start) {
 
-	for (int i = 1; i <= N; i++) {
-		if (visited[i] == true) continue;
-		if (map[start][i] == true) {
-			visited[start] = true;
-			dfs(i);
-		}
-	}
-
 	visited[start] = true;
+
+	for (int i = 1; i <= N; i++) {
+		if (map[start][i] == true && visited[i] == false) dfs(i);
+	}
 }
 
 int main(void) {
