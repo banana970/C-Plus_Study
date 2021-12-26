@@ -13,3 +13,4 @@ int main()
     big_result = A / B;
     cout << big_result % 10 << '\n';
 }
+ 
