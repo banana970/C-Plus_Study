@@ -27,3 +27,4 @@ int main()
     cout.precision(3);
     cout << max << '\n';
 }
+ 
